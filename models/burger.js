@@ -2,16 +2,16 @@
 
 // * Export at the end of the `burger.js` file.
 
-var orm = require("../config/orm");
+const orm = require("../config/orm");
 
-const burger = {
+let burger = {
     selectAll: (cb) => {
         orm.selectAll("burgers", (res) => {
             cb(res);
         });
     },
     insertOne: (name, cb) => {
-        orm.insertOne("burgers", burger_name, name, (res) => {
+        orm.insertOne("burgers", "burger_name", name, (res) => {
             cb(res);
         });
     },
@@ -21,6 +21,6 @@ const burger = {
         });
     }
 }
-module.exports = orm;
+module.exports = burger;
 
 //cb is a func used as a direct arg of another func
