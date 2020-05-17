@@ -2,7 +2,40 @@
 
 <div class="container">
 
-    <textarea id="burger" name="burg" rows="8" cols="40"></textarea>
-    <button type="submit">Submit</button>
+
+    <h2>Burgers to Eat!</h2>
+
+    <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+        {{> burgers/burgers-block devoured=0}}
+        {{/unless}}
+        {{/each}}
+    </ul>
+
+
+
+    <h2>Add a Burger</h2>
+
+    <form class="create-form">
+        <div class="form-group">
+            <input type="text" id="addBurger" name="name">
+        </div>
+        <button type="submit">Add Burger</button>
+    </form>
+
+
+    <h2>Devoured Burgers!</h2>
+
+    <ul class="devouredBurgers">
+        {{#each burgers}}
+        {{#if devoured}}
+        <li>
+            {{burger_name}}
+        </li>
+        {{/if}}
+        {{/each}}
+    </ul>
+
 
 </div>
