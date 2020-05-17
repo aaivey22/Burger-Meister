@@ -8,7 +8,7 @@
     <ul>
         {{#each burgers}}
         {{#unless devoured}}
-        {{> burgers/burgers-block devoured=0}}
+        {{> burgers/burger-block devoured=0}}
         {{/unless}}
         {{/each}}
     </ul>
@@ -27,7 +27,7 @@
 
     <h2>Devoured Burgers!</h2>
 
-    <ul class="devouredBurgers">
+    <ul>
         {{#each burgers}}
         {{#if devoured}}
         <li>

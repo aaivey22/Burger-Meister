@@ -10,17 +10,14 @@ let burger = {
             cb(res);
         });
     },
-    insertOne: (name, cb) => {
-        orm.insertOne("burgers", "burger_name", name, (res) => {
-            cb(res);
-        });
+    insertOne: (values, cb) => {
+        orm.insertOne("burgers", "burger_name", values, cb);
     },
-    updateOne: (id, cb) => {
-        orm.updateOne("burgers", "devoured", true, "id", id, (res) => {
-            cb(res);
-        });
+    updateOne: (values, condition, cb) => {
+        orm.updateOne("burgers", "devoured", values, condition,
+            cb);
     }
-}
+};
 module.exports = burger;
 
 //cb is a func used as a direct arg of another func
