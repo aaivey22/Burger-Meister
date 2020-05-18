@@ -2,17 +2,20 @@
 
 <div class="container">
 
-
     <h2>Burgers to Eat!</h2>
-
     <ul>
         {{#each burgers}}
+
+        {{!-- used a <p></p> to check that id was sending properly --}}
+        {{!-- <p>
+            {{id}}
+        </p> --}}
+
         {{#unless devoured}}
-        {{> burgers/burger-block devoured=0}}
+        {{> burgers/burger-block devoured=false}}
         {{/unless}}
         {{/each}}
     </ul>
-
 
 
     <h2>Add a Burger</h2>
@@ -31,7 +34,7 @@
         {{#each burgers}}
         {{#if devoured}}
         <li>
-            {{burger_name}}
+            {{> burgers/burger-block devoured=true}}
         </li>
         {{/if}}
         {{/each}}

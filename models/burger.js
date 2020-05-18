@@ -1,6 +1,3 @@
-// * Also inside `burger.js`, create the code that will call the ORM functions using burger specific input for the ORM.
-
-// * Export at the end of the `burger.js` file.
 
 const orm = require("../config/orm");
 
@@ -11,13 +8,16 @@ let burger = {
         });
     },
     insertOne: (values, cb) => {
-        orm.insertOne("burgers", "burger_name", values, cb);
+        orm.insertOne("burgers", "burger_name", values, (res) => {
+            cb(res);
+        });
     },
     updateOne: (values, condition, cb) => {
-        orm.updateOne("burgers", "devoured", values, condition,
-            cb);
+        orm.updateOne("burgers", "devoured", values, condition, (res) => {
+            cb(res);
+        });
     }
 };
 module.exports = burger;
 
-//cb is a func used as a direct arg of another func
+// cb is a func used as a direct arg of another func

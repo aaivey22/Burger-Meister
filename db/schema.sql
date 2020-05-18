@@ -10,9 +10,9 @@ CREATE TABLE burgers (
   PRIMARY KEY(id)
 );
 
-INSERT INTO burgers (burger_name, devoured)
-VALUES ("tofu burger", false);
+-- INSERT INTO burgers (burger_name, devoured)
+-- VALUES ("tofu burger", false);
 
-INSERT INTO burgers (burger_name, devoured)
-VALUES ("cheeseburger", false);
+-- INSERT INTO burgers (burger_name, devoured)
+-- VALUES ("cheeseburger", false);
 

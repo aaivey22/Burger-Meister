@@ -23,9 +23,9 @@ const orm = {
         });
     },
     insertOne: function (tableInput, columns, values, cb) {
-        const queryString = "INSERT INTO ${tableInput} (${columns}) VALUES ('${values}')";
+        const queryString = `INSERT INTO ${tableInput} (${columns}) VALUES ('${values}')`;
         console.log(queryString);
-        connection.query(queryString, vals, (err, result) => {
+        connection.query(queryString, values, (err, result) => {
             if (err) {
                 throw err;
             }
@@ -33,7 +33,7 @@ const orm = {
         });
     },
     updateOne: function (tableInput, columns, values, condition, cb) {
-        const queryString = "UPDATE ${tableInput} SET ${columns} = '${values}' WHERE ${condition}";
+        const queryString = `UPDATE ${tableInput} SET ${columns} = '${values}' WHERE ${condition}`;
         console.log(queryString);
         connection.query(queryString,(err, result) => {
             if (err) {
