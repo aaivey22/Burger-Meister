@@ -7,7 +7,7 @@ $(".create-form").on("submit", function (event) {
     const newBurger = {
         burger_name: $("#addBurger").val().trim(),
     };
-    console.log(newBurger)
+    console.log(newBurger);
     // Send the POST request.
     $.ajax("/api/burgers", {
         type: "POST",
@@ -16,8 +16,7 @@ $(".create-form").on("submit", function (event) {
         console.log("created new burger");
         // Reload the page to get the updated list
         location.reload();
-    }
-    );
+    });
 });
 
 // Update the burger
@@ -35,9 +34,8 @@ $(".update-devoured").on("click", () => {
         type: "PUT",
         data: devouredState
     }).then(() => {
-        console.log("changed devoured to", devouredState);
+        console.log("changed devoured to", updateBurger);
         // Reload the page to get the updated list
         location.reload();
-    }
-    );
+    });
 });

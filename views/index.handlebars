@@ -2,7 +2,7 @@
 
 <div class="container">
 
-    <h2>Burgers to Eat!</h2>
+    <h2>Burgers to Eat:</h2>
     <ul>
         {{#each burgers}}
 
@@ -28,13 +28,13 @@
     </form>
 
 
-    <h2>Devoured Burgers!</h2>
+    <h2>Devoured Burgers:</h2>
 
     <ul>
         {{#each burgers}}
         {{#if devoured}}
         <li>
-            {{> burgers/burger-block devoured=true}}
+            {{burger_name}}
         </li>
         {{/if}}
         {{/each}}

@@ -10,11 +10,11 @@
 
 //    * Export the ORM object in `module.exports`.
 
-const connection = require("./connection.js");
+const connection = require("./connection");
 
 const orm = {
     selectAll: function (tableInput, cb) {
-        const queryString = "SELECT * FROM " + tableInput + ";";
+        const queryString = `SELECT * FROM ${tableInput};`;
         connection.query(queryString, (err, result) => {
             if (err) {
                 throw err;
