@@ -3,6 +3,7 @@
 <div class="container">
 
     <h2>Burgers to Eat:</h2>
+        {{!-- refers to partials/burger-block to check boolean value of true/false --}}
     <ul>
         {{#each burgers}}
 
@@ -12,7 +13,7 @@
         </p> --}}
 
         {{#unless devoured}}
-        {{> burgers/burger-block devoured=false}}
+        {{> burgers/burger-block devoured=0}}
         {{/unless}}
         {{/each}}
     </ul>

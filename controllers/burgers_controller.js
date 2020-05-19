@@ -8,16 +8,16 @@ router.get("/", (req, res) => {
         const burgersData = {
             burgers: data
         };
-        console.log("burgers_controller.js 11" + burgersData);
+        console.log("burgers_controller.js 11, " + burgersData);
         res.render("index", burgersData)
     })
 })
 
 // POST route adds a new burger to the db table and refreshes the page to display the new burger
 router.post("/api/burgers", (req, res) => {
-    console.log(req.body.burger_name)
-    burger.insertOne(req.body.burger_name, (result) => {
-        console.log("burgers_controller.js 20" + result);
+    console.log(req.body.name)
+    burger.insertOne(req.body.name, (result) => {
+        console.log("burgers_controller.js 20, " + result);
         res.redirect("/")
     });
 });
@@ -26,14 +26,14 @@ router.post("/api/burgers", (req, res) => {
 router.put("/api/burgers/:id", (req, res) => {
     console.log(req.params.id)
     const condition = "id = " + req.params.id;
-    console.log("burgers_controller.js 28" + req.params.id)
-    burger.updateOne(req.body.devoured, condition, (result) => {
-        if (result.changedRows === 0) {
+    console.log("burgers_controller.js 28, " + req.params.id)
+    burger.updateOne(1, condition, (result) => {
+        if (result.changedRows == 0) {
             return res.status(404).end();
         } else {
             res.status(200).end();
         }
-    })
+    });
 });
 
 module.exports = router;
