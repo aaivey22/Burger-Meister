@@ -1,45 +1,60 @@
-<h1>The Burger Meister!</h1>
+<div class="container-fluid">
+    <div class="sticky-top" id="heading">
+        <h1>
+            BURGER MEISTER
+            <small class="text-muted">[ˈbɜrgər] [ˈmaɪstər]</small>
+        </h1>
+    </div>
+    <section class="addBurgerSection">
+        <div class="row justify-content-md-center">
+            <div class="col-sm">
 
-<div class="container">
+                <form class="create-form">
+                    <div class="form-group">
+                        {{!-- <label for="addBurger">Type your dream-burger here</label> --}}
+                        <input type="text" class="form-control" id="addBurger" name="name"
+                            placeholder="Type your dream-burger here to add it to your wish list"
+                            aria-describedby="nomnom">
+                        <small id="nomnom" class="form-text text-muted">Time for a quibbie.</small>
+                    </div>
+                    <button class="btn btn-success" type="submit">Make A Wish</button>
+                </form>
 
-    <h2>Burgers to Eat:</h2>
-        {{!-- refers to partials/burger-block to check boolean value of true/false --}}
-    <ul>
-        {{#each burgers}}
-
-        {{!-- used a <p></p> to check that id was sending properly --}}
-        {{!-- <p>
-            {{id}}
-        </p> --}}
-
-        {{#unless devoured}}
-        {{> burgers/burger-block devoured=0}}
-        {{/unless}}
-        {{/each}}
-    </ul>
-
-
-    <h2>Add a Burger</h2>
-
-    <form class="create-form">
-        <div class="form-group">
-            <input type="text" id="addBurger" name="name">
+            </div>
         </div>
-        <button type="submit">Add Burger</button>
-    </form>
+    </section>
 
+    <section class="wishAndDevourSection">
 
-    <h2>Devoured Burgers:</h2>
+        <div class="row">
+            <div class="col-sm">
+                <h2>Burger Wish List:</h2>
+                {{!-- refers to partials/burger-block to check boolean value of true/false --}}
+                <ul class="wish-list">
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    {{> burgers/burger-block devoured=0}}
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
 
-    <ul>
-        {{#each burgers}}
-        {{#if devoured}}
-        <li>
-            {{burger_name}}
-        </li>
-        {{/if}}
-        {{/each}}
-    </ul>
+            <div class="col-sm">
+                <h2>Unapologetically Devoured Burgers:</h2>
 
+                <ul class="devoured-list">
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <li>
+                        {{burger_name}}
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
 
 </div>
