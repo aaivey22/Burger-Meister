@@ -1,6 +1,7 @@
 
 body {
-background-image: url("../images/picnic.jpg");
+/* background-image: url("../images/picnic.jpg"); */
+background-color: #F4DF47;
 background-size: cover;
 }
 
@@ -8,15 +9,21 @@ h1 {
     text-align: center;
     padding-top: 5%;
     padding-bottom: 5%;
+    background-color: #DAF7A6;
 }
 
 .devoured-list {
     text-decoration: line-through;
-    padding: 0;
+    text-decoration-color: #C70039;
+    padding: 2%;
+    margin-right: 10%;
 }
 
 .wish-list {
-    padding: 0;
+    padding: 2%;
+    background-color: #F4AA47;
+    color: white;
+    margin-right: 10%;
 }
 
 li {

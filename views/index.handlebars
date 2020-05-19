@@ -30,7 +30,7 @@
             <div class="col-sm">
                 <h2>Burger Wish List:</h2>
                 {{!-- refers to partials/burger-block to check boolean value of true/false --}}
-                <ul class="wish-list">
+                <ul class="wish-list rounded">
                     {{#each burgers}}
                     {{#unless devoured}}
                     {{> burgers/burger-block devoured=0}}
@@ -42,7 +42,7 @@
             <div class="col-sm">
                 <h2>Unapologetically Devoured Burgers:</h2>
 
-                <ul class="devoured-list">
+                <ul class="devoured-list rounded">
                     {{#each burgers}}
                     {{#if devoured}}
                     <li>
