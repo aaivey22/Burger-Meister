@@ -15,7 +15,7 @@ const orm = {
     insertOne: function (tableInput, columns, values, cb) {
         const queryString = `INSERT INTO ${tableInput} (${columns}) VALUES ('${values}')`;
         console.log(queryString);
-        connection.query(queryString, values, function(err, result) {
+        connection.query(queryString, function(err, result) {
             if (err) {
                 throw err;
             }
