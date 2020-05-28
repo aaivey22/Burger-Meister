@@ -39,3 +39,19 @@ $(".update-devoured").on("click", function() {
         location.reload();
     });
 });
+
+// Delete devoured burgers
+$("#deleteBurgers").on("click", function() {
+    // Get the ID from the button.
+    // This is shorthand for $(this).attr("data-planid")
+    // Send the DELETE request.
+    $.ajax("/api/burgers/", {
+      type: "DELETE"
+    }).then(
+      function() {
+        console.log("deleted id ", id);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });

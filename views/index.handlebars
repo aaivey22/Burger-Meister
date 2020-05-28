@@ -7,8 +7,8 @@
     </div>
     <section class="addBurgerSection">
         <div class="row justify-content-md-center">
-            <div class="col-sm">
 
+            <div class="col-sm">
                 <form class="create-form">
                     <div class="form-group">
                         {{!-- <label for="addBurger">Type your dream-burger here</label> --}}
@@ -17,10 +17,16 @@
                             aria-describedby="nomnom">
                         <small id="nomnom" class="form-text text-muted">Time for a quibbie.</small>
                     </div>
-                    <button class="btn btn-success" type="submit">Make A Wish</button>
+                    <button class="btn btn-success" id="wishBurgers" type="submit">Make A Wish</button>
                 </form>
-
             </div>
+
+            <div class="col-sm">
+                <form class="delete-form">
+                    <button class="btn btn-danger" id="deleteBurgers">Clear The Table</button>
+                </form>
+            </div>
+
         </div>
     </section>
 

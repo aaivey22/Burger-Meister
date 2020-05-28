@@ -5,7 +5,7 @@ const connection = require("./connection");
 const orm = {
     selectAll: function (tableInput, cb) {
         const queryString = `SELECT * FROM ${tableInput};`;
-        connection.query(queryString, function(err, result) {
+        connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
             }
@@ -15,7 +15,7 @@ const orm = {
     insertOne: function (tableInput, columns, values, cb) {
         const queryString = `INSERT INTO ${tableInput} (${columns}) VALUES ('${values}')`;
         console.log(queryString);
-        connection.query(queryString, values, function(err, result) {
+        connection.query(queryString, values, function (err, result) {
             if (err) {
                 throw err;
             }
@@ -25,13 +25,24 @@ const orm = {
     updateOne: function (tableInput, columns, values, condition, cb) {
         const queryString = `UPDATE ${tableInput} SET ${columns} = '${values}' WHERE ${condition}`;
         console.log(queryString);
-        connection.query(queryString, function(err, result) {
+        connection.query(queryString, function (err, result) {
             if (err) {
                 throw err;
             }
             cb(result);
         });
+    },
+    deleteAll: function (table, cb) {
+        const queryString = `DELETE FROM ${table} WHERE devoured = true`;
+        connection.query(queryString, function (err, result) {
+            if (err) {
+                throw err;
+            }
+
+            cb(result);
+        });
     }
+
 }
 
 module.exports = orm;
