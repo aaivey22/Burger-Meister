@@ -21,12 +21,12 @@
 ---
 
 ## Snapshot
-<img src="10-OOP-homework-demo-1.png" alt="BurgerMeister App Image" style="border-radius: 20px" />
+<img src="burger-screenshot.jpg" alt="BurgerMeister App Image" style="border-radius: 20px" />
 
 <br/>
 <br/>
 
-<img src="10-OOP-homework-demo-1.png" alt="BurgerMeister App Image" style="border-radius: 20px" />
+<img src="burger-meister-gif.gif" alt="BurgerMeister App Image" style="border-radius: 20px" />
 
 <br/>
 <br/>
