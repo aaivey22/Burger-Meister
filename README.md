@@ -21,7 +21,7 @@
 ---
 
 ## Snapshot
-<img src="burger-screenshot.jpg" alt="BurgerMeister App Image" style="border-radius: 20px" />
+<img src="burger-screenshot.JPG" alt="BurgerMeister App Image" style="border-radius: 20px" />
 
 <br/>
 <br/>
