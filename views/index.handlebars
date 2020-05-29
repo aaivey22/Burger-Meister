@@ -1,42 +1,52 @@
 <div class="container-fluid">
-    <div class="sticky-top" id="heading">
-        <h1>
-            BURGER MEISTER
-            <small class="text-muted">[ˈbɜrgər] [ˈmaɪstər]</small>
-        </h1>
-    </div>
-    <section class="addBurgerSection">
-        <div class="row justify-content-md-center">
 
-            <div class="col-sm">
+    <section class="addBurgerSection">
+
+        <div class="row justify-content-md-center">
+            <div class="col-sm col-2" id="button-div">
                 <form class="create-form">
-                    <div class="form-group">
-                        {{!-- <label for="addBurger">Type your dream-burger here</label> --}}
-                        <input type="text" class="form-control" id="addBurger" name="name"
-                            placeholder="Type your dream-burger here to add it to your wish list"
-                            aria-describedby="nomnom">
-                        <small id="nomnom" class="form-text text-muted">Time for a quibbie.</small>
-                    </div>
-                    <button class="btn btn-success" id="wishBurgers" type="submit">Make A Wish</button>
+                    <button class="btn btn-success float-right" id="wishBurgers" type="submit">Make A Wish</button>
                 </form>
             </div>
+            <div class="col-sm col-5">
+                <div class="form-group">
+                    {{!-- <label for="addBurger">Type your dream-burger here</label> --}}
+                    <input type="text" class="form-control" id="addBurger" name="name"
+                        placeholder="Type your dream-burger here to add it to your wish list" aria-describedby="nomnom">
+                </div>
 
-            <div class="col-sm">
+            </div>
+            <div class="col-sm col-2">
                 <form class="delete-form">
                     <button class="btn btn-danger" id="deleteBurgers">Clear The Table</button>
                 </form>
             </div>
-
         </div>
+
+        {{!-- <div class="row justify-content-md-center">
+            <div class="col-sm col-2" id="button-div">
+                <form class="create-form">
+                    <button class="btn btn-success" id="wishBurgers" type="submit">Make A Wish</button>
+                </form>
+                <form class="delete-form">
+                    <button class="btn btn-danger" id="deleteBurgers">Clear The Table</button>
+                </form>
+            </div>
+        </div> --}}
+
+        <div class="row justify-content-md-center">
+            <small id="nomnom" class="form-text text-muted">Time for a quibbie.</small>
+        </div>
+
     </section>
 
     <section class="wishAndDevourSection">
 
         <div class="row">
-            <div class="col-sm">
-                <h2>Burger Wish List:</h2>
+            <div class="col-sm mr-5 rounded-lg" id="wish-div">
+                <h2 class="text-center p-3">Burger Wish List:</h2>
                 {{!-- refers to partials/burger-block to check boolean value of true/false --}}
-                <ul class="wish-list rounded">
+                <ul class="wish-list">
                     {{#each burgers}}
                     {{#unless devoured}}
                     {{> burgers/burger-block devoured=0}}
@@ -45,8 +55,8 @@
                 </ul>
             </div>
 
-            <div class="col-sm">
-                <h2>Unapologetically Devoured Burgers:</h2>
+            <div class="col-sm ml-5 rounded-lg" id="devoured-div">
+                <h2 class="text-center p-3">Unapologetically Devoured Burgers:</h2>
 
                 <ul class="devoured-list rounded">
                     {{#each burgers}}
